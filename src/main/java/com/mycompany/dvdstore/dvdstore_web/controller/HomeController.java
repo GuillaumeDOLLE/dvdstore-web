@@ -2,10 +2,11 @@ package com.mycompany.dvdstore.dvdstore_web.controller;
 
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
+import com.mycompany.dvdstore.dvdstore_web.form.MovieForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -23,10 +24,15 @@ public class HomeController {
         this.movieService = movieService;
     }
 
-    @RequestMapping("/dvdstore-home")
+    @GetMapping("/dvdstore-home")
     public @ModelAttribute("movies") List<Movie> displayHome() {
         System.out.println("La méthode display Home a été invoquée");
         List<Movie> movies = movieService.getMovieList();
         return movies;
+    }
+
+    @GetMapping("/add-movie-form")
+    public void displayMovieForm(@ModelAttribute MovieForm movieForm) {
+
     }
 }
