@@ -8,6 +8,7 @@
 <form th:action="@{/movie}" method="POST" th:object="${movieForm}">
     <!--    On peut mettre des $ à la place des * dans th:field-->
     <p>Title : <input type="text" th:field="*{title}"/></p>
+    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
     <p>
         Genre
         <select th:field="*{genre}">
@@ -26,7 +27,9 @@
             <option th:value="ANIMATION" th:text="Animation"></option>
         </select>
     </p>
+    <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
     <p>Description : <textarea th:field="*{description}"/></p>
+    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
     <input type="submit" value="Ajouter"/>
 </form>
 </body>

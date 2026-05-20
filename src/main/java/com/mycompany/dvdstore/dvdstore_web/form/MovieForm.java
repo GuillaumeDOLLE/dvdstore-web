@@ -5,13 +5,13 @@ import jakarta.validation.constraints.*;
 public class MovieForm {
 
     private Long id;
-    @NotBlank
-    @Size(max = 20)
+    @NotBlank(message = "Veuillez entrer un titre")
+    @Size(max = 20, message = "Entrez un titre de 20 caratères au plus")
     private String title;
-    @NotBlank
+    @NotBlank(message = "Veuillez choisir un genre")
     @Pattern(regexp = "COMEDIE|HORREUR|THRILLER|ACTION|ROMANTIQUE|DRAME|ANIMATION")
     private String genre;
-    @Size(max = 255)
+    @Size(max = 255, message = "Entrez une description de 255 caratères au plus")
     private String description;
 
     public String getTitle() {
