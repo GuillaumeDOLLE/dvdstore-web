@@ -25,10 +25,7 @@ public class HomeController {
     }
 
     @GetMapping("/dvdstore-home")
-    public @ModelAttribute("movies") List<Movie> displayHome() {
-        System.out.println("La méthode display Home a été invoquée");
-        List<Movie> movies = movieService.getMovieList();
-        return movies;
+    public void displayHome() {
     }
 
     @GetMapping("/add-movie-form")

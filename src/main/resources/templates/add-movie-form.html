@@ -5,7 +5,7 @@
     <title>Ajout d'un film</title>
 </head>
 <body>
-<form th:action="@{/movie}" method="POST" th:object="${movieForm}">
+<form th:action="@{/movie/add}" method="POST" th:object="${movieForm}">
     <!--    On peut mettre des $ à la place des * dans th:field-->
     <p>Title : <input type="text" th:field="*{title}"/></p>
     <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
