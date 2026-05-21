@@ -25,22 +25,22 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/{id}")
-    public String displayMovieCard(@PathVariable("id") long id, Model model) {
-        model.addAttribute("movie", movieService.getMovieById(id));
-        return "movie-details";
-    }
+//    @GetMapping("/{id}")
+//    public String displayMovieCard(@PathVariable("id") long id, Model model) {
+//        model.addAttribute("movie", movieService.getMovieById(id));
+//        return "movie-details";
+//    }
 
-    @PostMapping
-    public String addMovie(@Valid @ModelAttribute MovieForm movieForm, BindingResult results) {
-        if (results.hasErrors()) {
-            return "add-movie-form";
-        }
-        Movie movie = new Movie();
-        movie.setTitle(movieForm.getTitle());
-        movie.setGenre(movieForm.getGenre());
-        movie.setDescription(movieForm.getDescription());
-        movieService.registerMovie(movie);
-        return "movie-added";
-    }
+//    @PostMapping
+//    public String addMovie(@Valid @ModelAttribute MovieForm movieForm, BindingResult results) {
+//        if (results.hasErrors()) {
+//            return "add-movie-form";
+//        }
+//        Movie movie = new Movie();
+//        movie.setTitle(movieForm.getTitle());
+//        movie.setGenre(movieForm.getGenre());
+//        movie.setDescription(movieForm.getDescription());
+//        movieService.registerMovie(movie);
+//        return "movie-added";
+//    }
 }
