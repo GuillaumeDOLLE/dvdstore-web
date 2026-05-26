@@ -34,6 +34,7 @@ fetch('movie')
             td.appendChild(button);
             tr.appendChild(td);
 
+
         });
 
     });
@@ -72,5 +73,6 @@ function showDetail(id){
         text = document.createTextNode(`Mark: ${avg}/5`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
+
     });
 }
